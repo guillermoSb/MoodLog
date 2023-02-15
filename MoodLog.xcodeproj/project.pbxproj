@@ -16,6 +16,7 @@
 		700E02F3299D8AD000D0C2B4 /* MoodLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E02F2299D8AD000D0C2B4 /* MoodLogUITests.swift */; };
 		700E02F5299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E02F4299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift */; };
 		700E0304299D8DB900D0C2B4 /* MOLogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */; };
+		70C187D7299D8FC400C83B3C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187D6299D8FC400C83B3C /* Log.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		700E02F2299D8AD000D0C2B4 /* MoodLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLogUITests.swift; sourceTree = "<group>"; };
 		700E02F4299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLogUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOLogsVC.swift; sourceTree = "<group>"; };
+		70C187D6299D8FC400C83B3C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		700E02D0299D8ACF00D0C2B4 /* MoodLog */ = {
 			isa = PBXGroup;
 			children = (
+				70C187D5299D8FAD00C83B3C /* Model */,
 				70C187D4299D8F8500C83B3C /* Screens */,
 				70C187D3299D8F7300C83B3C /* Support */,
 				700E02D5299D8ACF00D0C2B4 /* ViewController.swift */,
@@ -141,6 +144,14 @@
 				700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		70C187D5299D8FAD00C83B3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				70C187D6299D8FC400C83B3C /* Log.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 			files = (
 				700E02D6299D8ACF00D0C2B4 /* ViewController.swift in Sources */,
 				700E02D2299D8ACF00D0C2B4 /* AppDelegate.swift in Sources */,
+				70C187D7299D8FC400C83B3C /* Log.swift in Sources */,
 				700E02D4299D8ACF00D0C2B4 /* SceneDelegate.swift in Sources */,
 				700E0304299D8DB900D0C2B4 /* MOLogsVC.swift in Sources */,
 			);
