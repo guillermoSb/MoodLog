@@ -11,8 +11,14 @@ class MOLogsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
         // Do any additional setup after loading the view.
+        configureVC()
+    }
+    
+    private func configureVC() {
+        view.backgroundColor = .systemBackground
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Your Mood Log"
     }
 
 }
