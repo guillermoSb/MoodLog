@@ -99,13 +99,12 @@
 		700E02D0299D8ACF00D0C2B4 /* MoodLog */ = {
 			isa = PBXGroup;
 			children = (
-				700E02D1299D8ACF00D0C2B4 /* AppDelegate.swift */,
-				700E02D3299D8ACF00D0C2B4 /* SceneDelegate.swift */,
+				70C187D4299D8F8500C83B3C /* Screens */,
+				70C187D3299D8F7300C83B3C /* Support */,
 				700E02D5299D8ACF00D0C2B4 /* ViewController.swift */,
 				700E02DA299D8AD000D0C2B4 /* Assets.xcassets */,
 				700E02DC299D8AD000D0C2B4 /* LaunchScreen.storyboard */,
 				700E02DF299D8AD000D0C2B4 /* Info.plist */,
-				700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */,
 			);
 			path = MoodLog;
 			sourceTree = "<group>";
@@ -125,6 +124,23 @@
 				700E02F4299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift */,
 			);
 			path = MoodLogUITests;
+			sourceTree = "<group>";
+		};
+		70C187D3299D8F7300C83B3C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				700E02D1299D8ACF00D0C2B4 /* AppDelegate.swift */,
+				700E02D3299D8ACF00D0C2B4 /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		70C187D4299D8F8500C83B3C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
