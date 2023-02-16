@@ -19,6 +19,13 @@ class MOLogsVC: UIViewController {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Your Mood Log"
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addLogTapped))
+        navigationItem.rightBarButtonItem = addButton
+    }
+    
+    @objc func addLogTapped() {
+        let navigationVC = UINavigationController(rootViewController: MOCreateLogVC())
+        present(navigationVC, animated: true)
     }
 
 }

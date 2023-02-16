@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		700E02D2299D8ACF00D0C2B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E02D1299D8ACF00D0C2B4 /* AppDelegate.swift */; };
 		700E02D4299D8ACF00D0C2B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E02D3299D8ACF00D0C2B4 /* SceneDelegate.swift */; };
-		700E02D6299D8ACF00D0C2B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E02D5299D8ACF00D0C2B4 /* ViewController.swift */; };
 		700E02DB299D8AD000D0C2B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 700E02DA299D8AD000D0C2B4 /* Assets.xcassets */; };
 		700E02DE299D8AD000D0C2B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 700E02DC299D8AD000D0C2B4 /* LaunchScreen.storyboard */; };
 		700E02E9299D8AD000D0C2B4 /* MoodLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E02E8299D8AD000D0C2B4 /* MoodLogTests.swift */; };
@@ -17,6 +16,7 @@
 		700E02F5299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E02F4299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift */; };
 		700E0304299D8DB900D0C2B4 /* MOLogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */; };
 		70C187D7299D8FC400C83B3C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187D6299D8FC400C83B3C /* Log.swift */; };
+		70C187D9299DC0EC00C83B3C /* MOCreateLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187D8299DC0EC00C83B3C /* MOCreateLogVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 		700E02CE299D8ACF00D0C2B4 /* MoodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		700E02D1299D8ACF00D0C2B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		700E02D3299D8ACF00D0C2B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		700E02D5299D8ACF00D0C2B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		700E02DA299D8AD000D0C2B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		700E02DD299D8AD000D0C2B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		700E02DF299D8AD000D0C2B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +50,7 @@
 		700E02F4299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLogUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOLogsVC.swift; sourceTree = "<group>"; };
 		70C187D6299D8FC400C83B3C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		70C187D8299DC0EC00C83B3C /* MOCreateLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCreateLogVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +104,6 @@
 				70C187D5299D8FAD00C83B3C /* Model */,
 				70C187D4299D8F8500C83B3C /* Screens */,
 				70C187D3299D8F7300C83B3C /* Support */,
-				700E02D5299D8ACF00D0C2B4 /* ViewController.swift */,
 				700E02DA299D8AD000D0C2B4 /* Assets.xcassets */,
 				700E02DC299D8AD000D0C2B4 /* LaunchScreen.storyboard */,
 				700E02DF299D8AD000D0C2B4 /* Info.plist */,
@@ -142,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */,
+				70C187D8299DC0EC00C83B3C /* MOCreateLogVC.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -284,9 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				700E02D6299D8ACF00D0C2B4 /* ViewController.swift in Sources */,
 				700E02D2299D8ACF00D0C2B4 /* AppDelegate.swift in Sources */,
 				70C187D7299D8FC400C83B3C /* Log.swift in Sources */,
+				70C187D9299DC0EC00C83B3C /* MOCreateLogVC.swift in Sources */,
 				700E02D4299D8ACF00D0C2B4 /* SceneDelegate.swift in Sources */,
 				700E0304299D8DB900D0C2B4 /* MOLogsVC.swift in Sources */,
 			);
