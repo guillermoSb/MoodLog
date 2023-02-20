@@ -11,12 +11,21 @@ import Foundation
 struct Log: Encodable {
     let date: Date
     let moodLevel: MoodLevel
-    let people: [String]
+    let activity: LogActivity
 }
 
 
-enum MoodLevel: Encodable {
-    case Happy
-    case Ok
-    case Sad
+enum MoodLevel: String, Codable {
+    case Happy = "Happy"
+    case Angry = "Angry"
+    case Sad = "Sad"
+    case Scared = "Scared"
+    case Disgust = "Disgust"
+}
+
+enum LogActivity: String, Codable {
+    case Study = "Estudiando"
+    case Exercise = "Ejercicio"
+    case WithFriends = "Con Amigos"
+    case WithFamily = "Con Familia"
 }

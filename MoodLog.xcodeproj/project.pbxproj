@@ -17,6 +17,10 @@
 		700E0304299D8DB900D0C2B4 /* MOLogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */; };
 		70C187D7299D8FC400C83B3C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187D6299D8FC400C83B3C /* Log.swift */; };
 		70C187D9299DC0EC00C83B3C /* MOCreateLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187D8299DC0EC00C83B3C /* MOCreateLogVC.swift */; };
+		70C187DC299DC4B200C83B3C /* MOBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187DB299DC4B200C83B3C /* MOBodyLabel.swift */; };
+		70C187DF299DC74900C83B3C /* MOSubtitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187DE299DC74900C83B3C /* MOSubtitleLabel.swift */; };
+		70C187E5299DE9D000C83B3C /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187E4299DE9D000C83B3C /* Date+Ext.swift */; };
+		70EE820929A2DC7600D2F18F /* MOLogActivityOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70EE820829A2DC7600D2F18F /* MOLogActivityOption.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOLogsVC.swift; sourceTree = "<group>"; };
 		70C187D6299D8FC400C83B3C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		70C187D8299DC0EC00C83B3C /* MOCreateLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCreateLogVC.swift; sourceTree = "<group>"; };
+		70C187DB299DC4B200C83B3C /* MOBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOBodyLabel.swift; sourceTree = "<group>"; };
+		70C187DE299DC74900C83B3C /* MOSubtitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOSubtitleLabel.swift; sourceTree = "<group>"; };
+		70C187E4299DE9D000C83B3C /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		70EE820829A2DC7600D2F18F /* MOLogActivityOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOLogActivityOption.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +109,10 @@
 		700E02D0299D8ACF00D0C2B4 /* MoodLog */ = {
 			isa = PBXGroup;
 			children = (
-				70C187D5299D8FAD00C83B3C /* Model */,
 				70C187D4299D8F8500C83B3C /* Screens */,
+				70C187DA299DC43B00C83B3C /* Custom Views */,
+				70C187D5299D8FAD00C83B3C /* Model */,
+				70C187E3299DE9C500C83B3C /* Extensions */,
 				70C187D3299D8F7300C83B3C /* Support */,
 				700E02DA299D8AD000D0C2B4 /* Assets.xcassets */,
 				700E02DC299D8AD000D0C2B4 /* LaunchScreen.storyboard */,
@@ -152,6 +162,40 @@
 				70C187D6299D8FC400C83B3C /* Log.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		70C187DA299DC43B00C83B3C /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				70EE820729A2DBA400D2F18F /* LogActivity */,
+				70C187DD299DC73800C83B3C /* Labels */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		70C187DD299DC73800C83B3C /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				70C187DB299DC4B200C83B3C /* MOBodyLabel.swift */,
+				70C187DE299DC74900C83B3C /* MOSubtitleLabel.swift */,
+			);
+			path = Labels;
+			sourceTree = "<group>";
+		};
+		70C187E3299DE9C500C83B3C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				70C187E4299DE9D000C83B3C /* Date+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		70EE820729A2DBA400D2F18F /* LogActivity */ = {
+			isa = PBXGroup;
+			children = (
+				70EE820829A2DC7600D2F18F /* MOLogActivityOption.swift */,
+			);
+			path = LogActivity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,10 +328,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70C187E5299DE9D000C83B3C /* Date+Ext.swift in Sources */,
 				700E02D2299D8ACF00D0C2B4 /* AppDelegate.swift in Sources */,
+				70C187DF299DC74900C83B3C /* MOSubtitleLabel.swift in Sources */,
+				70EE820929A2DC7600D2F18F /* MOLogActivityOption.swift in Sources */,
 				70C187D7299D8FC400C83B3C /* Log.swift in Sources */,
 				70C187D9299DC0EC00C83B3C /* MOCreateLogVC.swift in Sources */,
 				700E02D4299D8ACF00D0C2B4 /* SceneDelegate.swift in Sources */,
+				70C187DC299DC4B200C83B3C /* MOBodyLabel.swift in Sources */,
 				700E0304299D8DB900D0C2B4 /* MOLogsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

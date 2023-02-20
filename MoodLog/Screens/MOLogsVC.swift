@@ -11,14 +11,13 @@ class MOLogsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         configureVC()
     }
     
     private func configureVC() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .secondarySystemGroupedBackground
         navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Your Mood Log"
+        title = "Tu Diario"
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addLogTapped))
         navigationItem.rightBarButtonItem = addButton
     }
