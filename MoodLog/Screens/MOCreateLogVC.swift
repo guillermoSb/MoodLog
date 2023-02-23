@@ -17,7 +17,16 @@ class MOCreateLogVC: UIViewController {
     let stack2 = UIStackView()
     let createButton = UIButton()
     
+    let activityChoice1 = MOLogActivityOption(with: .Study)
+    let activityChoice2 = MOLogActivityOption(with: .WithFamily)
+    let activityChoice3 = MOLogActivityOption(with: .WithFriends)
+    let activityChoice4 = MOLogActivityOption(with: .Exercise)
+
     let moodPickerOptions: [MoodLevel] = [.Happy, .Disgust, .Sad, .Angry, .Scared]
+    
+    var selectedMood: MoodLevel? = .Happy
+    var selectedActivity: LogActivity?
+   
     
     
     let padding: CGFloat = 12
@@ -30,6 +39,7 @@ class MOCreateLogVC: UIViewController {
         configurePicker()
         configureActivities()
         configureButton()
+        handleDisableButton()
         
     }
     
@@ -130,6 +140,8 @@ class MOCreateLogVC: UIViewController {
 
         createButton.configuration?.titleAlignment = .leading
         
+        createButton.addTarget(self, action: #selector(createTapped), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             createButton.topAnchor.constraint(equalTo: stack2.bottomAnchor, constant: padding),
             createButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
@@ -140,30 +152,45 @@ class MOCreateLogVC: UIViewController {
     }
     
     private func createActivityChoices() {
-        let activityChoice1 = MOLogActivityOption(with: .Study)
+        activityChoice1.delegate = self
         activityChoice1.translatesAutoresizingMaskIntoConstraints = false
         activityChoice1.layer.cornerRadius = 12
         stack1.addArrangedSubview(activityChoice1)
         activityChoice1.backgroundColor = .systemBackground
         
-        let activityChoice2 = MOLogActivityOption(with: .WithFamily)
+        activityChoice2.delegate = self
         activityChoice2.translatesAutoresizingMaskIntoConstraints = false
         activityChoice2.layer.cornerRadius = 12
-        activityChoice2.selected = true
         stack1.addArrangedSubview(activityChoice2)
         activityChoice2.backgroundColor = .systemBackground
         
-        let activityChoice3 = MOLogActivityOption(with: .WithFriends)
+        activityChoice3.delegate = self
         activityChoice3.translatesAutoresizingMaskIntoConstraints = false
         activityChoice3.layer.cornerRadius = 12
         stack2.addArrangedSubview(activityChoice3)
         activityChoice3.backgroundColor = .systemBackground
         
-        let activityChoice4 = MOLogActivityOption(with: .Exercise)
+        activityChoice4.delegate = self
         activityChoice4.translatesAutoresizingMaskIntoConstraints = false
         activityChoice4.layer.cornerRadius = 12
         stack2.addArrangedSubview(activityChoice4)
         activityChoice4.backgroundColor = .systemBackground
+    }
+    
+    private func handleDisableButton() {
+        guard selectedMood != nil, selectedActivity != nil else {
+            createButton.isEnabled = false
+            return
+        }
+        createButton.isEnabled = true
+        
+    }
+    
+    
+    @objc func createTapped() {
+        print(selectedMood!)
+        print(selectedActivity!)
+        dismiss(animated: true)
     }
     
     @objc func cancelTapped() {
@@ -187,8 +214,27 @@ extension MOCreateLogVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("Selected \(moodPickerOptions[row])")
+        self.selectedMood = moodPickerOptions[row]
+        handleDisableButton()
     }
     
     
+}
+
+
+extension MOCreateLogVC: MOLogActivityOptionDelegate {
+    func logActivityOptionDidTap(_ activity: LogActivity) {
+        let choices = [activityChoice1,activityChoice2,activityChoice3,activityChoice4]
+        for choice in choices {
+            if choice.activity == activity {
+                choice.selected = true
+                self.selectedActivity = activity
+                handleDisableButton()
+            } else {
+                choice.selected = false
+            }
+        }
+  
+                
+    }
 }

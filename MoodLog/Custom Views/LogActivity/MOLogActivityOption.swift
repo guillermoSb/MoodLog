@@ -7,16 +7,27 @@
 
 import UIKit
 
+
+protocol MOLogActivityOptionDelegate {
+    func logActivityOptionDidTap(_ activity: LogActivity)
+}
+
 class MOLogActivityOption: UIView {
     
-    private var activity: LogActivity!
+     var activity: LogActivity!
     private let activityImageView = UIImageView()
     private let activityTitleText = MOSubtitleLabel()
     
+    var delegate: MOLogActivityOptionDelegate?
+    
+    let gestureRecognizer = UITapGestureRecognizer()
+    
+    
     var selected: Bool = false {
         didSet {
+            
             self.layer.borderColor = UIColor.systemBlue.withAlphaComponent(0.5).cgColor
-            self.layer.borderWidth = 4
+            self.layer.borderWidth = selected ? 4 : 0
         }
     }
 
@@ -37,19 +48,23 @@ class MOLogActivityOption: UIView {
     
     
     private func configure() {
+        let padding: CGFloat = 12
+        guard let image = activityImage() else {return}
+        
         addSubview(activityTitleText)
         addSubview(activityImageView)
-        let padding: CGFloat = 12
+        
         activityTitleText.text = activity.rawValue
         activityImageView.translatesAutoresizingMaskIntoConstraints = false
-        guard let image = activityImage() else {return}
         activityImageView.image = image
         activityImageView.tintColor = .systemGray
         activityImageView.contentMode = .scaleAspectFill
-        
         activityTitleText.textAlignment = .center
         
+        addGestureRecognizer(self.gestureRecognizer)
+        gestureRecognizer.addTarget(self, action: #selector(optionTapped))
         
+    
         NSLayoutConstraint.activate([
             activityTitleText.topAnchor.constraint(equalTo: topAnchor, constant: padding),
             activityTitleText.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
@@ -76,7 +91,12 @@ class MOLogActivityOption: UIView {
             return UIImage(systemName: "figure.walk")
       
         }
+    }
     
-    
+    @objc func optionTapped(_ sender: UITapGestureRecognizer? = nil) {
+        guard let delegate = delegate else {
+            return
+        }
+        delegate.logActivityOptionDidTap(self.activity)
     }
 }
