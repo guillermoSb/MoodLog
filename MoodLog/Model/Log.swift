@@ -16,11 +16,11 @@ struct Log: Encodable {
 
 
 enum MoodLevel: String, Codable {
-    case Happy = "Happy"
-    case Angry = "Angry"
-    case Sad = "Sad"
-    case Scared = "Scared"
-    case Disgust = "Disgust"
+    case Happy = "Felicidad"
+    case Angry = "Enojo"
+    case Sad = "Tristeza"
+    case Scared = "Miedo"
+    case Disgust = "Disgusto"
 }
 
 enum LogActivity: String, Codable {

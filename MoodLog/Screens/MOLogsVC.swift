@@ -23,8 +23,19 @@ class MOLogsVC: UIViewController {
     }
     
     @objc func addLogTapped() {
-        let navigationVC = UINavigationController(rootViewController: MOCreateLogVC())
+        let createVC = MOCreateLogVC()
+        createVC.delegate = self
+        let navigationVC = UINavigationController(rootViewController: createVC)
         present(navigationVC, animated: true)
     }
 
+}
+
+
+extension MOLogsVC: MOCreateLogVCDelegate {
+    func createLogVCDidCreateLog(_ log: Log) {
+        print(log)
+    }
+    
+    
 }

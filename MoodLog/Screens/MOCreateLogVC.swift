@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MOCreateLogVCDelegate: AnyObject {
+    func createLogVCDidCreateLog(_ log: Log)
+}
+
 class MOCreateLogVC: UIViewController {
     
     let currentDateLabel = MOBodyLabel(fontWeight: .semibold)
@@ -26,8 +30,8 @@ class MOCreateLogVC: UIViewController {
     
     var selectedMood: MoodLevel? = .Happy
     var selectedActivity: LogActivity?
-   
     
+    weak var delegate: MOCreateLogVCDelegate?
     
     let padding: CGFloat = 12
     
@@ -71,7 +75,7 @@ class MOCreateLogVC: UIViewController {
         
         NSLayoutConstraint.activate([
             pickerLabel.topAnchor.constraint(equalTo: currentDateLabel.bottomAnchor, constant: 40),
-            pickerLabel.heightAnchor.constraint(equalToConstant: 20)
+            pickerLabel.heightAnchor.constraint(equalToConstant: 24)
         ])
         
   
@@ -188,8 +192,12 @@ class MOCreateLogVC: UIViewController {
     
     
     @objc func createTapped() {
-        print(selectedMood!)
-        print(selectedActivity!)
+        guard let delegate = delegate else {
+            return
+        }
+        let log = Log(date: Date(), moodLevel: selectedMood!, activity: selectedActivity!)
+        delegate.createLogVCDidCreateLog(log)
+        self.delegate = nil
         dismiss(animated: true)
     }
     

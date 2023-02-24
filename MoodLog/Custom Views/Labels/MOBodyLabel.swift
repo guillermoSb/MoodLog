@@ -18,9 +18,14 @@ class MOBodyLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(fontWeight: UIFont.Weight = .regular) {
+    convenience init(fontWeight: UIFont.Weight = .regular, fontSize: CGFloat = 17) {
         self.init(frame: .zero)
-        font = UIFont.systemFont(ofSize: 17, weight: fontWeight)
+        font = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
+    }
+    
+    convenience init(with style: UIFont.TextStyle) {
+        self.init(frame: .zero)
+        font = UIFont.preferredFont(forTextStyle: style)
     }
     
     func configureView() {

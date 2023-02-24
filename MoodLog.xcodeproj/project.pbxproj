@@ -15,6 +15,7 @@
 		700E02F3299D8AD000D0C2B4 /* MoodLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E02F2299D8AD000D0C2B4 /* MoodLogUITests.swift */; };
 		700E02F5299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E02F4299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift */; };
 		700E0304299D8DB900D0C2B4 /* MOLogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */; };
+		703247E029A83A370061433E /* MOLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703247DF29A83A370061433E /* MOLogCell.swift */; };
 		70C187D7299D8FC400C83B3C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187D6299D8FC400C83B3C /* Log.swift */; };
 		70C187D9299DC0EC00C83B3C /* MOCreateLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187D8299DC0EC00C83B3C /* MOCreateLogVC.swift */; };
 		70C187DC299DC4B200C83B3C /* MOBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187DB299DC4B200C83B3C /* MOBodyLabel.swift */; };
@@ -53,6 +54,7 @@
 		700E02F2299D8AD000D0C2B4 /* MoodLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLogUITests.swift; sourceTree = "<group>"; };
 		700E02F4299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLogUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOLogsVC.swift; sourceTree = "<group>"; };
+		703247DF29A83A370061433E /* MOLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOLogCell.swift; sourceTree = "<group>"; };
 		70C187D6299D8FC400C83B3C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		70C187D8299DC0EC00C83B3C /* MOCreateLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCreateLogVC.swift; sourceTree = "<group>"; };
 		70C187DB299DC4B200C83B3C /* MOBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOBodyLabel.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = MoodLogUITests;
 			sourceTree = "<group>";
 		};
+		703247DE29A839760061433E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				703247DF29A83A370061433E /* MOLogCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		70C187D3299D8F7300C83B3C /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +177,7 @@
 		70C187DA299DC43B00C83B3C /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				703247DE29A839760061433E /* Cells */,
 				70EE820729A2DBA400D2F18F /* LogActivity */,
 				70C187DD299DC73800C83B3C /* Labels */,
 			);
@@ -334,6 +345,7 @@
 				70EE820929A2DC7600D2F18F /* MOLogActivityOption.swift in Sources */,
 				70C187D7299D8FC400C83B3C /* Log.swift in Sources */,
 				70C187D9299DC0EC00C83B3C /* MOCreateLogVC.swift in Sources */,
+				703247E029A83A370061433E /* MOLogCell.swift in Sources */,
 				700E02D4299D8ACF00D0C2B4 /* SceneDelegate.swift in Sources */,
 				70C187DC299DC4B200C83B3C /* MOBodyLabel.swift in Sources */,
 				700E0304299D8DB900D0C2B4 /* MOLogsVC.swift in Sources */,
