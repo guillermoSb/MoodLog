@@ -29,6 +29,7 @@ class MOLogCell: UITableViewCell {
     
     private func configure() {
         let padding: CGFloat = 12.0
+        selectionStyle = .none
         contentView.addSubview(logDateLabel)
         contentView.addSubview(logInfoCell)
  

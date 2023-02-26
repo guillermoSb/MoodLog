@@ -55,6 +55,7 @@ class MOLogsVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Tu Diario"
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addLogTapped))
+        addButton.tintColor = Colors.main
         navigationItem.rightBarButtonItem = addButton
     }
     

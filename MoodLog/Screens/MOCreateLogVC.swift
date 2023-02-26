@@ -52,6 +52,7 @@ class MOCreateLogVC: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemGroupedBackground
         let cancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTapped))
+        cancel.tintColor = Colors.main
         navigationItem.rightBarButtonItem = cancel
     }
     
@@ -136,6 +137,7 @@ class MOCreateLogVC: UIViewController {
     
     private func configureButton() {
         view.addSubview(createButton)
+        createButton.tintColor = Colors.main
         createButton.setTitle("Crear", for: .normal)
         createButton.translatesAutoresizingMaskIntoConstraints = false
         createButton.configuration = .tinted()
