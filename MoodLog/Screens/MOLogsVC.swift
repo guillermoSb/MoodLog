@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class MOLogsVC: UIViewController {
     
-    var logs: [Log] = [Log(date: Date(), moodLevel: .Happy, activity: .Study), Log(date: Date(), moodLevel: .Happy, activity: .Exercise)]
+    var logs: [Log] = []
     
      enum Section {
         case main
@@ -24,6 +25,20 @@ class MOLogsVC: UIViewController {
         configureTableView()
         configureDataSource()
         updateData(on: self.logs)
+        fetchLogs()
+    }
+    
+    private func fetchLogs() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let persistentContainer = appDelegate.persistentContainer
+
+        // Get a managed object context from the persistent container
+        let context = persistentContainer.viewContext
+        let request: NSFetchRequest<Log> = Log.fetchLogsRequest()
+        let logs = try? context.fetch(request)
+        self.logs = logs ?? []
+        updateData(on: self.logs)
+   
     }
     
     private func updateData(on logs: [Log]) {

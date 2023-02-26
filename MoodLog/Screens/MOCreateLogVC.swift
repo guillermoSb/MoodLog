@@ -195,8 +195,17 @@ class MOCreateLogVC: UIViewController {
         guard let delegate = delegate else {
             return
         }
-        let log = Log(date: Date(), moodLevel: selectedMood!, activity: selectedActivity!)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let persistentContainer = appDelegate.persistentContainer
+        
+        let log = Log(context: persistentContainer.viewContext)
+        log.moodLevelValue = selectedMood!.rawValue
+        log.activityValue = selectedActivity!.rawValue
+        log.date = Date()
+        try? persistentContainer.viewContext.save()
         delegate.createLogVCDidCreateLog(log)
+        
+       
         self.delegate = nil
         dismiss(animated: true)
     }

@@ -15,7 +15,10 @@
 		700E02F3299D8AD000D0C2B4 /* MoodLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E02F2299D8AD000D0C2B4 /* MoodLogUITests.swift */; };
 		700E02F5299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E02F4299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift */; };
 		700E0304299D8DB900D0C2B4 /* MOLogsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */; };
+		7024B44529AAE2D30079E539 /* Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7024B44429AAE2D30079E539 /* Log+CoreDataProperties.swift */; };
 		703247E029A83A370061433E /* MOLogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 703247DF29A83A370061433E /* MOLogCell.swift */; };
+		704D39AC29AAE01900DCC76A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704D39AB29AAE01900DCC76A /* CoreData.framework */; };
+		704D39B029AAE06B00DCC76A /* LogModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 704D39AE29AAE06B00DCC76A /* LogModel.xcdatamodeld */; };
 		70C187D7299D8FC400C83B3C /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187D6299D8FC400C83B3C /* Log.swift */; };
 		70C187D9299DC0EC00C83B3C /* MOCreateLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187D8299DC0EC00C83B3C /* MOCreateLogVC.swift */; };
 		70C187DC299DC4B200C83B3C /* MOBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C187DB299DC4B200C83B3C /* MOBodyLabel.swift */; };
@@ -54,7 +57,10 @@
 		700E02F2299D8AD000D0C2B4 /* MoodLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLogUITests.swift; sourceTree = "<group>"; };
 		700E02F4299D8AD000D0C2B4 /* MoodLogUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLogUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		700E0303299D8DB900D0C2B4 /* MOLogsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOLogsVC.swift; sourceTree = "<group>"; };
+		7024B44429AAE2D30079E539 /* Log+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		703247DF29A83A370061433E /* MOLogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOLogCell.swift; sourceTree = "<group>"; };
+		704D39AB29AAE01900DCC76A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		704D39AF29AAE06B00DCC76A /* LogModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LogModel.xcdatamodel; sourceTree = "<group>"; };
 		70C187D6299D8FC400C83B3C /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		70C187D8299DC0EC00C83B3C /* MOCreateLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOCreateLogVC.swift; sourceTree = "<group>"; };
 		70C187DB299DC4B200C83B3C /* MOBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MOBodyLabel.swift; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				704D39AC29AAE01900DCC76A /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,10 +98,12 @@
 		700E02C5299D8ACF00D0C2B4 = {
 			isa = PBXGroup;
 			children = (
+				7024B44429AAE2D30079E539 /* Log+CoreDataProperties.swift */,
 				700E02D0299D8ACF00D0C2B4 /* MoodLog */,
 				700E02E7299D8AD000D0C2B4 /* MoodLogTests */,
 				700E02F1299D8AD000D0C2B4 /* MoodLogUITests */,
 				700E02CF299D8ACF00D0C2B4 /* Products */,
+				704D39AA29AAE01900DCC76A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +120,7 @@
 		700E02D0299D8ACF00D0C2B4 /* MoodLog */ = {
 			isa = PBXGroup;
 			children = (
+				704D39AD29AAE03100DCC76A /* CoreData */,
 				70C187D4299D8F8500C83B3C /* Screens */,
 				70C187DA299DC43B00C83B3C /* Custom Views */,
 				70C187D5299D8FAD00C83B3C /* Model */,
@@ -146,6 +156,22 @@
 				703247DF29A83A370061433E /* MOLogCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		704D39AA29AAE01900DCC76A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				704D39AB29AAE01900DCC76A /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		704D39AD29AAE03100DCC76A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				704D39AE29AAE06B00DCC76A /* LogModel.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		70C187D3299D8F7300C83B3C /* Support */ = {
@@ -339,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7024B44529AAE2D30079E539 /* Log+CoreDataProperties.swift in Sources */,
 				70C187E5299DE9D000C83B3C /* Date+Ext.swift in Sources */,
 				700E02D2299D8ACF00D0C2B4 /* AppDelegate.swift in Sources */,
 				70C187DF299DC74900C83B3C /* MOSubtitleLabel.swift in Sources */,
@@ -347,6 +374,7 @@
 				70C187D9299DC0EC00C83B3C /* MOCreateLogVC.swift in Sources */,
 				703247E029A83A370061433E /* MOLogCell.swift in Sources */,
 				700E02D4299D8ACF00D0C2B4 /* SceneDelegate.swift in Sources */,
+				704D39B029AAE06B00DCC76A /* LogModel.xcdatamodeld in Sources */,
 				70C187DC299DC4B200C83B3C /* MOBodyLabel.swift in Sources */,
 				700E0304299D8DB900D0C2B4 /* MOLogsVC.swift in Sources */,
 			);
@@ -682,6 +710,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		704D39AE29AAE06B00DCC76A /* LogModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				704D39AF29AAE06B00DCC76A /* LogModel.xcdatamodel */,
+			);
+			currentVersion = 704D39AF29AAE06B00DCC76A /* LogModel.xcdatamodel */;
+			path = LogModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 700E02C6299D8ACF00D0C2B4 /* Project object */;
 }
