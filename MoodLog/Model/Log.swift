@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Log: Encodable {
+struct Log: Encodable, Hashable {
     let date: Date
     let moodLevel: MoodLevel
     let activity: LogActivity
